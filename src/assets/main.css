@@ -1,0 +1,28 @@
+@import './base.css';
+
+#app {
+
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: blueviolet;
+  transition: 0.4s;
+}
+
+
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(281, 26%, 65%, 0.2);
+  }
+}
+
+.text-center {
+  text-align: center;
+}
