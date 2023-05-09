@@ -12,7 +12,7 @@
 
     * ``yarn run watch``
 
-  * This microservice is set to listen on port 5087, if you want, you can change the port for running it on your local in server.ts file. Make sure you are in microservices directory when you run * `yarn run watch` command.
+  * This microservice is set to listen on port 5087, if you want, you can change the port for running it on your local in server.ts file. Make sure you are in microservices directory when you run `yarn run watch` command.
 
   * Run the folllowing address in your browser to validate the json output:
     * `http://localhost:5087/repoDetails`
