@@ -24,5 +24,5 @@
   * `yarn`
   * `yarn dev`
 
-* Open application in browser with following address and verify if the repoDetails tab are listing the repo details.
+* Open application in browser with following address and verify if the repo tab are listing the repo details.
   * `http://localhost:5173/`
