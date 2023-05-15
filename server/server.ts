@@ -2,11 +2,23 @@ import fastify from 'fastify'
 import fastifyCors from '@fastify/cors'
 import * as fs from 'fs'
 import * as YAML from 'yaml'
+import fastifyHttpProxy from "@fastify/http-proxy";
+import dotenv from 'dotenv';
 
-// create the fastify task
+import {GetGHProxySecureOptions, GetGHProxyOptions } from "./proxy";
+
+dotenv.config();
+
 const server = fastify({
-    logger: true
+  logger: true
 })
+
+let proxyOptsSecure = GetGHProxySecureOptions(process.env.GH_Repo)
+server.register(fastifyHttpProxy, proxyOptsSecure)
+
+let proxyOpts = GetGHProxyOptions()
+server.register(fastifyHttpProxy, proxyOpts)
+// create the fastify task
 
 //setup CORS
 server.register(fastifyCors, {
