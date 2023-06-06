@@ -1,61 +1,61 @@
 <template>
-    <p> Displaying User Data</p>
+  <div>
+    <p class="text-center" style="font-family: Arial; font-size: 20px; color: blueviolet;">
+      This page shows the list of repos and repo details
+    </p>
 
-<!-- Only render this table if there is user data-->
-<div v-if="userData?.id">
-    <!-- Use a table to render the data-->
-  <table>
+    <div v-if="repoData.length > 0">
       <table border style="margin: 0 auto;">
         <tr style="background-color: blueviolet;">
-          <th style="padding: 10px; font-family: Arial; font-size: 16px; color: white;">ID</th>
-          <th style="padding: 10px; font-family: Arial; font-size: 16px; color: white;">Name</th>
-          <th style="padding: 10px; font-family: Arial; font-size: 16px; color: white;">Gist Url</th>
+          <th style="padding: 10px; font-family: Arial; font-size: 16px; color: white;">Repo ID</th>
+          <th style="padding: 10px; font-family: Arial; font-size: 16px; color: white;">Repo Name</th>
+          <th style="padding: 10px; font-family: Arial; font-size: 16px; color: white;">Url</th>
+          <th style="padding: 10px; font-family: Arial; font-size: 16px; color: white;">Language</th>
+          <th style="padding: 10px; font-family: Arial; font-size: 16px; color: white;">Last Updated</th>
         </tr>
-        <tr>
-          <td style="padding: 10px; font-family: Arial; font-size: 14px;">{{ userData?.id }}</td>
-          <td style="padding: 10px; font-family: Arial; font-size: 14px;">{{ userData?.name }}</td>
-          <td style="padding: 10px; font-family: Arial; font-size: 14px;">{{ userData?.gists_url }}</td>
+        <tr v-for="(repo, rowNum) in repoData" :key="rowNum" :style="(rowNum % 2 == 0) ? {backgroundColor: '#f2f2f2'} : {}">
+          <td style="padding: 10px; font-family: Arial; font-size: 14px;">{{ repo.id }}</td>
+          <td style="padding: 10px; font-family: Arial; font-size: 14px;">{{ repo.name }}</td>
+          <td style="padding: 10px; font-family: Arial; font-size: 14px;">{{ repo.html_url }}</td>
+          <td style="padding: 10px; font-family: Arial; font-size: 14px;">{{ repo.language }}</td>
+          <td style="padding: 10px; font-family: Arial; font-size: 14px;">{{ repo.created_at }}</td>
         </tr>
       </table>
-    </table>
+    </div>
   </div>
-  </template>
+</template>
+
     
     <script lang="ts">
     export default {
-      name: 'GitHub API ',
+      name: 'SecondPage',
     };
     </script>
-    
+
     <script setup lang="ts">
     import { onMounted, ref } from 'vue';
     import type {GitHubApiInterface} from './APIsInterface';
     import axios from 'axios';
 
-  //Most code goes here
-  let userData = ref<GitHubApiInterface>()
+    let repoData = ref<GitHubApiInterface[]>([])
 
-  // What does onMounted do? Ex: Page 1 - As soon as the page comes into focus and is ready, the api call happens automatically
-  // When does it get called? When the page loads
-  onMounted(async () => {
-    console.log("GithubUserDataPage mounted")
+    onMounted(async () => {
+      console.log("Page 1 mounted")
 
-    //this is where to go and get the user data
-    let allusersURI = 'http://localhost:5087/ghsecure/user'
+      let allRepoURL = 'https://api.github.com/users/np873/repos'
 
-    //Use axios to load the user data - readup on await to make
-    //async calls easier
-    // What is async/await? Wakes up when the page is loaded.
-    // What is the UserApiInterface[] doing? Expecting it to look like an array of the UserApiInterface model
-    let userAPI = await axios.get<GitHubApiInterface>(allusersURI)
+      //Use axios to load the repo data - readup on await to make
+      //async calls easier
+      let repoAPI = await axios.get<GitHubApiInterface[]>(allRepoURL)
 
-    //if OK, set the userData variable, so that we can render in the ui
-    if(userAPI.status == 200){
-      userData.value = userAPI.data
-    }
-  })
+      //if OK, set the repoData variable, so that we can render in the ui
+      if(repoAPI.status == 200){
+        repoData.value = repoAPI.data
+      }
+    })
     </script>
     
-    <!-- Add "scoped" attribute to limit CSS to this component only -->
-    <style scoped>
-  </style>
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+</style>

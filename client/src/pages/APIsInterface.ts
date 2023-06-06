@@ -15,5 +15,7 @@ export interface ApiErrorInterface {
 export interface GitHubApiInterface {
     id: string,
     name: string,
-    gists_url: string
+    html_url: LinkStyle,
+    language: string
+    created_at: string
 }
