@@ -5,22 +5,20 @@
 <div v-if="userData?.id">
     <!-- Use a table to render the data-->
   <table>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Gists URL</th>
-    </tr>
-      <!-- v-for is how you do a loop in Vue-->
-      <!-- Each row needs a unique variable/key-->
-      <!-- v-for is how you do a loop in Vue-->
-      <!-- Each td is the data element at that point in the array-->
-    <tr>
-      <td>{{ userData?.id }}</td>
-      <td>{{ userData?.name }}</td>
-      <td>{{ userData?.gistUrl }}</td>
-    </tr>
-  </table>
-</div>
+      <table border style="margin: 0 auto;">
+        <tr style="background-color: blueviolet;">
+          <th style="padding: 10px; font-family: Arial; font-size: 16px; color: white;">ID</th>
+          <th style="padding: 10px; font-family: Arial; font-size: 16px; color: white;">Name</th>
+          <th style="padding: 10px; font-family: Arial; font-size: 16px; color: white;">Gist Url</th>
+        </tr>
+        <tr>
+          <td style="padding: 10px; font-family: Arial; font-size: 14px;">{{ userData?.id }}</td>
+          <td style="padding: 10px; font-family: Arial; font-size: 14px;">{{ userData?.name }}</td>
+          <td style="padding: 10px; font-family: Arial; font-size: 14px;">{{ userData?.gists_url }}</td>
+        </tr>
+      </table>
+    </table>
+  </div>
   </template>
     
     <script lang="ts">
