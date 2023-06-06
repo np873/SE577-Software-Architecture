@@ -31,6 +31,11 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       component: () => import('../pages/Profile.vue')
+    },
+    {
+      path: '/github',
+      name: 'github',
+      component: () => import('../pages/GitHubApi.vue')
     }
   ]
 })
