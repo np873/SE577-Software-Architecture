@@ -11,3 +11,9 @@ export interface ApiErrorInterface {
     errorCode: number,
     errorMessage: string
 }
+
+export interface GitHubApiInterface {
+    id: string,
+    name: string,
+    gistUrl: string
+}
