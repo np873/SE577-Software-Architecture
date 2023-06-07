@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="text-center" style="font-family: Arial; font-size: 20px; color: blueviolet;">
-      This page shows the list of repos and repo details
+      This page shows the list of Yaml file repos
     </p>
 
     <div v-if="repoData.length > 0">

@@ -33,14 +33,14 @@ const router = createRouter({
       component: () => import('../pages/Profile.vue')
     },
     {
-      path: '/github',
-      name: 'github',
-      component: () => import('../pages/GitHubApi.vue')
-    },
-    {
       path: '/githubrepos',
       name: 'githubrepos',
-      component: () => import('../pages/GitHubRepos.vue')
+      component: () => import('../pages/GitHubApiRepos.vue')
+    },
+    {
+      path: '/githubrepodetail',
+      name: 'githubrepodetail',
+      component: () => import('../pages/GitHubRepoDetail.vue')
     }
   ]
 })

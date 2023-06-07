@@ -16,8 +16,9 @@ export interface GitHubRepoInterface {
     id: string,
     name: string,
     html_url: LinkStyle,
-    language: string
-    created_at: string
+    language: string,
+    created_at: string,
+    updated_at: string
 }
 
 export interface GithubUser {
