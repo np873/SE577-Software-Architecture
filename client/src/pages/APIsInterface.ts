@@ -12,10 +12,17 @@ export interface ApiErrorInterface {
     errorMessage: string
 }
 
-export interface GitHubApiInterface {
+export interface GitHubRepoInterface {
     id: string,
     name: string,
     html_url: LinkStyle,
     language: string
     created_at: string
+}
+
+export interface GithubUser {
+    name: string,
+    public_repos: number,
+    public_gists: number,
+    html_url: string
 }
