@@ -20,6 +20,34 @@
   </div>
 </template>
 
+<script lang="ts">
+  import { onMounted, ref } from 'vue';
+  import type { GitHubRepoInterface } from './APIsInterface';
+  import axios from 'axios';
+
+  export default {
+    name: 'GitHub Repos',
+    setup() {
+      const repoData = ref<GitHubRepoInterface[]>([]);
+
+      onMounted(async () => {
+        console.log("Page 1 mounted");
+
+        let allRepoURL = 'https://api.github.com/users/np873/repos';
+
+        let repoAPI = await axios.get<GitHubRepoInterface[]>(allRepoURL);
+
+        if (repoAPI.status === 200) {
+          repoData.value = repoAPI.data;
+        }
+      });
+
+      return { repoData };
+    }
+  };
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .repo-item {
   display: flex;
@@ -52,33 +80,3 @@
   border-top: 1px solid #ccc;
 }
 </style>
-
-<script lang="ts">
-  import { onMounted, ref } from 'vue';
-  import type { GitHubRepoInterface } from './APIsInterface';
-  import axios from 'axios';
-
-  export default {
-    name: 'GitHub Repos',
-    setup() {
-      const repoData = ref<GitHubRepoInterface[]>([]);
-
-      onMounted(async () => {
-        console.log("Page 1 mounted");
-
-        let allRepoURL = 'https://api.github.com/users/np873/repos';
-
-        let repoAPI = await axios.get<GitHubRepoInterface[]>(allRepoURL);
-
-        if (repoAPI.status === 200) {
-          repoData.value = repoAPI.data;
-        }
-      });
-
-      return { repoData };
-    }
-  };
-</script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
