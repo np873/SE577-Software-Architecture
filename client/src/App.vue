@@ -16,6 +16,7 @@ import ThirdPage from './pages/Profile.vue'
         <RouterLink to="/repos">Repos</RouterLink>
         <RouterLink to="/profile">Profile</RouterLink>
         <RouterLink to="/githubrepos">GitHub API Repos</RouterLink>
+        <RouterLink to="/githubgists">GitHub API Gist</RouterLink>
       </nav>
       <hr/>
   </header>

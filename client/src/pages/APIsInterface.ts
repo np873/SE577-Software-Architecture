@@ -25,5 +25,22 @@ export interface GithubUser {
     name: string,
     public_repos: number,
     public_gists: number,
-    html_url: string
+    html_url: string,
+    avatar_url: string
 }
+
+export interface Gist {
+    id: string;
+    owner: {
+      login: string;
+    };
+    files: {
+      [filename: string]: GistFile;
+    };
+  }
+  
+  export interface GistFile {
+    filename: string;
+    type: string;
+    language: string;
+  }

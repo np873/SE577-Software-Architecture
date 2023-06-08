@@ -6,9 +6,7 @@
 
     <div v-if="repoData.length > 0">
       <div v-for="(repo, index) in repoData" :key="repo.id" class="repo-item">
-        <router-link :to="`/githubrepodetail/${repo.name}`" class="repo-link">
-          <h1>{{ repo.name }}</h1>
-      </router-link>
+          <h2>{{ repo.name }}</h2>
         <div class="repo-info">
           <span v-if="repo.language" class="dot"></span>
           <p v-if="repo.language" class="repo-language">{{ repo.language }}</p>
@@ -22,7 +20,7 @@
 
 <script lang="ts">
   import { onMounted, ref } from 'vue';
-  import type { GitHubRepoInterface } from './APIsInterface';
+  import type { GitHubRepoInterface} from './APIsInterface';
   import axios from 'axios';
 
   export default {
@@ -33,7 +31,7 @@
       onMounted(async () => {
         console.log("Page 1 mounted");
 
-        let allRepoURL = 'https://api.github.com/users/np873/repos';
+        let allRepoURL = 'http://localhost:5087/ghsecure/user/repos';
 
         let repoAPI = await axios.get<GitHubRepoInterface[]>(allRepoURL);
 

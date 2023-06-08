@@ -1,6 +1,6 @@
 <template>
   <div v-if="userData" class="text-center">
-    <img src="https://pixabay.com/get/g86d51cb389e4beb3f5af645ec8c4e26f39527267b9a908bec274c9f28706f74c936c078b035e308bd2a6d6ccb26a02f291341681d064c4f9921900a2d55218585c4dab0c41e32a79be975451a838bc88_1280.png" style="height: 150px; width: 150px;">
+    <img :src="userData.avatar_url" style="height: 150px; width: 150px;" />
     <div>
       <h1 style="margin: 0;">{{ userData.name }}</h1>
       <p style="margin: 0;">{{ userData.html_url }}</p>
@@ -26,7 +26,7 @@ let userData = ref<GithubUser>()
 onMounted(async () => {
   console.log("Page 1 mounted")
 
-  let userURL = 'https://api.github.com/users/np873'
+  let userURL = 'http://localhost:5087/ghsecure/user'
 
   // Use axios to load the user data - read up on async/await to make
   // asynchronous calls easier

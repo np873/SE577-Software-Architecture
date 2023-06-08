@@ -38,9 +38,9 @@ const router = createRouter({
       component: () => import('../pages/GitHubApiRepos.vue')
     },
     {
-      path: '/githubrepodetail',
-      name: 'githubrepodetail',
-      component: () => import('../pages/GitHubRepoDetail.vue')
+      path: '/githubgists',
+      name: 'githubgists',
+      component: () => import('../pages/GitHubGists.vue')
     }
   ]
 })
