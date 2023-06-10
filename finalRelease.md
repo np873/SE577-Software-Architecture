@@ -18,14 +18,14 @@
     * `http://localhost:5087/ghsecure/user`
     
  * Then navigate to client directory
-  * Install necessary npm or yarn services:
-    * ``yarn``
+   * Install necessary npm or yarn services:
+     * ``yarn``
     
-  * Run following cmd command
-    * ``yarn dev``
+   * Run following cmd command
+     * ``yarn dev``
     
-  * Run the folllowing address in your browser
-    * `http://localhost:5173/`
+   * Run the folllowing address in your browser
+     * `http://localhost:5173/`
     
     
  # Architectural Description
