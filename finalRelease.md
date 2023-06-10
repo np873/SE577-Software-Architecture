@@ -4,7 +4,7 @@
     * GH_Repo = {token}
 
   * Install necessary npm or yarn services:
-    * yarn 
+    * `yarn`
 
   * Run following cmd command to run microservice, which will start the microservice in localhost:
     * ``yarn run watch``
@@ -19,12 +19,13 @@
     
  * Then navigate to client directory
   * Install necessary npm or yarn services:
-    * yarn 
+    * ``yarn``
+    
   * Run following cmd command
-    * yarn dev
+    * ``yarn dev``
     
   * Run the folllowing address in your browser
-    * http://localhost:5173/
+    * `http://localhost:5173/`
     
     
  # Architectural Description
