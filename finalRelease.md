@@ -49,12 +49,12 @@
     
  # Quality Attribute
  * Scalability
-  * The architectural design of the project enables seamless scalability by effectively separating responsibilities between the front-end and back-end components. This separation allows for straightforward expansion of the application by introducing new features, components, and API endpoints as the project evolves.
+   * The architectural design of the project enables seamless scalability by effectively separating responsibilities between the front-end and back-end components. This separation allows for straightforward expansion of the application by introducing new features, components, and API endpoints as the project evolves.
   
-  * By separating the concerns between the front-end and back-end, the project's architecture fosters scalability. This modular approach allows developers to incrementally enhance the application's capabilities by introducing new components, features, and API endpoints, enabling the application to grow and evolve smoothly.
+   * By separating the concerns between the front-end and back-end, the project's architecture fosters scalability. This modular approach allows developers to incrementally enhance the application's capabilities by introducing new components, features, and API endpoints, enabling the application to grow and evolve smoothly.
   
  * Security
-  * Security is a top priority in the application's design, and several measures are in place to ensure the protection of sensitive information. One crucial security measure is the utilization of an access token for authenticating requests to the GitHub API.
+   * Security is a top priority in the application's design, and several measures are in place to ensure the protection of sensitive information. One crucial security measure is the utilization of an access token for authenticating requests to the GitHub API.
   
-  * This architectural design significantly enhances the security of the GitHub credentials and tokens, preventing unauthorized access or potential misuse. By centralizing the interaction with GitHub within the server-side code, the application establishes a secure and controlled environment for handling sensitive information.
+   * This architectural design significantly enhances the security of the GitHub credentials and tokens, preventing unauthorized access or potential misuse. By centralizing the interaction with GitHub within the server-side code, the application establishes a secure and controlled environment for handling sensitive information.
   
