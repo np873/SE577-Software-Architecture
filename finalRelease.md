@@ -1,6 +1,6 @@
 # Steps to run Application
 * Navigate to server directory
-  * First make .env file in following pattern
+  * First make .env file in following pattern at server directory
     * GH_Repo = {token}
 
   * Install necessary npm or yarn services:
